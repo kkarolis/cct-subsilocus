@@ -1,0 +1,19 @@
+#!/bin/bash
+set -euo pipefail
+
+PYTHON_MANAGE="gosu appuser python /var/lib/appuser/app/manage.py"
+
+if [ -z ${NO_BOOTSTRAP+x} ]
+then
+	if [ -z ${NO_MIGRATION+x} ]
+	then
+		
+		wait-for-it.sh -t 5 $POSTGRES_HOST:$POSTGRES_PORT -- echo "$POSTGRES_HOST:$POSTGRES_PORT is up"
+		$PYTHON_MANAGE migrate
+	fi
+
+	exec $PYTHON_MANAGE "$@"
+else
+	# we don't want to bootstrap
+	exec "$@"
+fi

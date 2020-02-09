@@ -1,0 +1,80 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jonas.jonaitis",
+      "first_name": "Jonas",
+      "last_name": "Jonaitis",
+      "email": "jonas.jonaitis@mock.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-02-07T05:46:55.007Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "last_login": null,
+      "is_superuser": false,
+      "username": "petras.petraitis",
+      "first_name": "Petras",
+      "last_name": "Petraitis",
+      "email": "petras.petraitis@mock.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-02-07T05:46:55.007Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "reservations.meetingroom",
+    "pk": 1,
+    "fields": {
+      "name": "Mėėting Room 1",
+      "owner_id": 1
+    }
+  },
+  {
+    "model": "reservations.meetingroom",
+    "pk": 2,
+    "fields": {
+      "name": "Mėėting Room 2",
+      "owner_id": 1
+    }
+  },
+  {
+    "model": "reservations.employee",
+    "pk": 1,
+    "fields": {
+      "name": "Darbuotojas Petraš Petraitiž",
+      "owner_id": 1
+    }
+  },
+  {
+    "model": "reservations.employee",
+    "pk": 2,
+    "fields": {
+      "name": "Darbuotojas Jonąs Jonaitiž",
+      "owner_id": 1
+    }
+  },
+  {
+    "model": "reservations.reservation",
+    "pk": 1,
+    "fields": {
+      "title": "Meeting 1",
+      "datetime_from": "2020-02-07T09:00:00Z",
+      "datetime_to": "2020-02-07T10:00:00Z",
+      "cancelled": false,
+      "meeting_room": 1,
+      "owner": 1
+    }
+  }
+]

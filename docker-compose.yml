@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  subsilocus:
+    image: kkarolis/cct-subsilocus
+    environment:
+      - POSTGRES_DB=subsilocus
+      - POSTGRES_USER=subsilocus
+      - POSTGRES_PASSWORD=subsilocus
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    links:
+      - "db"
+  db:
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=subsilocus
+      - POSTGRES_USER=subsilocus
+      - POSTGRES_PASSWORD=subsilocus
+    volumes:
+      - db-data:/var/lb/postgresql/data
+
+volumes:
+  db-data:

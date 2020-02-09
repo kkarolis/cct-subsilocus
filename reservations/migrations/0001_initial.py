@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ),
                 ("name", models.CharField(max_length=100)),
             ],
-            options={"ordering": ["id"],},
+            options={"ordering": ["id"]},
         ),
         migrations.CreateModel(
             name="MeetingRoom",
@@ -40,6 +40,6 @@ class Migration(migrations.Migration):
                 ),
                 ("name", models.CharField(max_length=100)),
             ],
-            options={"ordering": ["id"],},
+            options={"ordering": ["id"]},
         ),
     ]

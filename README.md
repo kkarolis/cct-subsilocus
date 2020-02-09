@@ -1,2 +1,0 @@
-# cct-subsilocus
-Subsidium Locus
