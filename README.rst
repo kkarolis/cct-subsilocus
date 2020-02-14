@@ -1,5 +1,5 @@
 Subsilocus
-----------
+==========
 |Python Version| |License| |Code Style|
 
 Subsidium Locus (or Subsilocus for short) is a room reservation service which
