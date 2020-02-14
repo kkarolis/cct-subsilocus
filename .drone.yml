@@ -3,9 +3,39 @@ kind: pipeline
 type: docker
 name: default
 
+clone:
+  depth: 1
+
 steps:
+- name: firststep 
+  image: python:3.8
+  commands:
+    - echo "dummy step for drone DAG"
+
+- name: pycodestyle
+  image: python:3.8
+  depends_on: [firststep]
+  commands:
+    - pip install pycodestyle
+    - pycodestyle --ignore=E501,W503 ./
+
+- name: black
+  image: python:3.8
+  depends_on: [firststep]
+  commands:
+    - pip install black
+    - black --check ./
+
+- name: safety
+  image: python:3.8
+  depends_on: [firststep]
+  commands:
+    - pip install safety
+    - safety check
+
 - name: backend
   image: kkarolis/cct-subsilocus
+  depends_on: [firststep]
   environment:
     POSTGRES_DB: subsilocus
     POSTGRES_USER: subsilocus
