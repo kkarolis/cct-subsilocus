@@ -87,6 +87,13 @@ For testing the service from command line, `Curlie
     # cancel a reservation
     curlie -L --user bill:bill POST http://localhost:8000/reservations/8/cancel/
 
+    # list reservations for specific employee for specific day
+    curlie -L --user bill:bill \
+        http://localhost:8000/reservations/\?employee_ids__in\=1,2\&datetime_from__gt\="2022-02-15T00:00:00Z"\&datetime_to__lt\="2022-02-16T00:00:00Z"
+
+    # list reservations for specific meeting room
+    curlie -L --user bill:bill http://localhost:8000/reservations/\?meeting_room_id\=1
+
 
 Assumptions / Limitations
 -------------------------

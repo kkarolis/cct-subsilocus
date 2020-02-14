@@ -25,6 +25,8 @@ class NumberInFilter(filters.BaseInFilter, filters.NumberFilter):
 
 class ReservationFilter(filters.FilterSet):
     employee_ids__in = NumberInFilter(field_name="employees", lookup_expr="in")
+
+    # gte / lte might be useful as well
     datetime_from__lt = django_filters.IsoDateTimeFilter(
         field_name="datetime_from", lookup_expr="lt"
     )
@@ -42,6 +44,7 @@ class ReservationFilter(filters.FilterSet):
         model = Reservation
         fields = {
             "id": ["exact"],
+            "meeting_room_id": ["exact"],
             "title": ["icontains"],
             "cancelled": ["exact"],
         }
