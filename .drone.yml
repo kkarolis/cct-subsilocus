@@ -1,0 +1,30 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: backend
+  image: kkarolis/cct-subsilocus
+  environment:
+    POSTGRES_DB: subsilocus
+    POSTGRES_USER: subsilocus
+    POSTGRES_PASSWORD: subsilocus
+    POSTGRES_HOST: db
+    POSTGRES_PORT: 5432
+    SECRET_KEY: TEST_KEY
+    DEBUG: true
+  commands:
+    # switch the built-in version with the new one
+    - rm -rf /var/lib/appuser/app/*
+    - cp -r $PWD/* /var/lib/appuser/app
+    - cd /var/lib/appuser/app
+    - entrypoint test
+
+services:
+  - name: db
+    image: postgres:10
+    environment:
+      POSTGRES_DB: subsilocus
+      POSTGRES_USER: subsilocus
+      POSTGRES_PASSWORD: subsilocus

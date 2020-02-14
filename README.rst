@@ -1,6 +1,6 @@
 Subsilocus
 ==========
-|Python Version| |License| |Code Style|
+|Build Status| |Python Version| |License| |Docker Pulls| |Code Style| 
 
 Subsidium Locus (or Subsilocus for short) is a room reservation service which
 exposes an API to manage rooms/employees/reservations. It enforces employees to
@@ -9,9 +9,11 @@ create non-overlapping reservations so that sanity can be in-check.
 Behind the scenes, `Django Rest Framework
 <https://www.django-rest-framework.org/>`_ is used.
 
+.. |Build Status| image:: https://cloud.drone.io/api/badges/kkarolis/cct-subsilocus/status.svg
 .. |Python Version| image:: https://img.shields.io/badge/python-3.8-blue
 .. |License| image:: https://img.shields.io/github/license/kkarolis/cct-subsilocus
 .. |Code Style| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+.. |Docker Pulls| image:: https://img.shields.io/docker/pulls/kkarolis/cct-subsilocus
 
 Requirements
 ------------
