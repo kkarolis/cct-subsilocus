@@ -104,6 +104,7 @@ Assumptions / Limitations
   logging past reservations)
 - No access controls for who can view what / who can modify what
 - API was not test with invalid (non unicode data)
+- No easy way to Logout/Refresh/Change Password/Change token functionality
 
     
 Development
